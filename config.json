@@ -1,0 +1,41 @@
+{
+  "ffc-location": "D:/Work/FFC/config/DC_Essence_Components",
+  // "ffc-location": "//blrcswcombk0001/FFC-1.1.8.2.0-4502/config/DC2ESSENCE",
+
+  "queue-manager": {
+    "hostname": "BLRCSWUBINB0008",
+    "port": 2400,
+    "name": "QM_SECRET"
+  },
+
+  // "queue-manager": {
+  //   "hostname": "BLRCSWCOMBK0001",
+  //   "port": 1420,
+  //   "name": "QM_UB_BFDC"
+  // },
+
+  "fbe-environment": {
+    "hostname": "blr2istemp04",
+    "port": 8080,
+    "username": "superit",
+    "password": "superit"
+  },
+  "mpm-environment": {
+    "hostname": "blrcswfbedd0005",
+    "port": 9080
+  },
+  "script-log-level": "debug",
+
+//either dev or prod
+  "env" : "dev",
+
+//Below properties are default properties
+  "queue": {
+    "from-dc": "SendQueue",
+    "to-dc": "ReceiveQueue",
+    "to-fbe-pmt": "UB_IND_PaymentRequestQ",
+    "to-fbe-so": "UB_IND_SORequestQ",
+    "to-fbe-rest": "Interface_Receive",
+    "from-fbe": "UB_IND_PaymentResponseQ"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  
+  "env-specific": {
+    "dev": {
+      "all-files": {
+        "queues.persistent.list": "#comment"
+      },
+      "persistence.properties": "#comment_all_lines",
+      "config-fbe-services.properties": {
+        "FBE_TRANSPORT": "MQ"
+      },
+      "config.properties": {
+        "FFC_SCRIPTS_TYPE": " "
+      },
+      "log4j.properties": {
+        "log4j.category.services.ws.request": "#uncomment&#config.script-log-level",
+        "log4j.category.services.ws.response": "#uncomment&#config.script-log-level",
+        "log4j.category.services.queue.request": "#uncomment&#config.script-log-level",
+        "log4j.category.services.queue.response": "#uncomment&#config.script-log-level",
+        "log4j.category.services.eodextracts": "#uncomment&#config.script-log-level",
+        "log4j.category.services.utils": "#uncomment&#config.script-log-level",
+        "log4j.category.services.common.SepaStandingOrders": "#uncomment&#config.script-log-level"
+      }
+    },
+    "prod": {
+    }
+  },
+
+  // below are the file specific modifications
+  "config-dc-services.properties": {
+    "DC.MQ.HOSTNAME": "#config.queue-manager.hostname",
+    "DC.MQ.PORTNO": "#config.queue-manager.port",
+    "DC.MQ.QUEUEMANAGER": "#config.queue-manager.name",
+    "DC.MQ.CHANNEL": "SYSTEM.DEF.SVRCONN",
+    "DC.MQ.PAYMENTS.REQUESTQUEUE": "#config.queue.from-dc",
+    "DC.MQ.PAYMENTS.RESPONSEQUEUE": "#config.queue.to-dc"
+  },
+
+  "config-fbe-services.properties": {
+    "FBE.SOAP.HOSTNAME": "#config.fbe-environment.hostname",
+    "FBE.SOAP.PORTNO": "#config.fbe-environment.port",
+    "FBE.SOAP.USERNAME": "#config.fbe-environment.username",
+    "FBE.SOAP.PASSWORD": "#config.fbe-environment.password",
+    "FBE.SEPA.MPM.HOSTNAME": "#config.mpm-environment.hostname",
+    "FBE.SEPA.MPM.PORTNO": "#config.mpm-environment.port",
+    "FBE.JMS.QUEUE.PAYMENTREQUEST": "#config.queue.to-fbe-pmt",
+    "FBE.JMS.QUEUE.SOREQUESTQUEUE": "#config.queue.to-fbe-so",
+    "FBE.JMS.QUEUE.INTERFACE_RECIEVE": "#config.queue.to-fbe-rest",
+    "FBE.JMS.QUEUE.PAYMENTRESPONSE": "#config.queue.from-fbe"
+  },
+
+  "service-jms.properties": "#comment_all_lines",
+
+  "config.properties": {
+    "JMS_SERVICE_URL": "#comment"
+  }
+  
+}
