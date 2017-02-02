@@ -1,5 +1,6 @@
 {
-  "ffc-location": "D:/Work/FFC/config/DC_Essence_Components",
+  "ffc-location": "D:/Work/FFC/DC_Essence_Components",
+  // "ffc-location": "D:/Work/FFC/config/DC_Essence_Components",
   // "ffc-location": "//blrcswcombk0001/FFC-1.1.8.2.0-4502/config/DC2ESSENCE",
 
   "queue-manager": {
